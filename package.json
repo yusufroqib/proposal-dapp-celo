@@ -1,0 +1,36 @@
+{
+  "author": "Rocco",
+  "bugs": {
+    "url": "https://github.com/celo-org/celo-composer/issues"
+  },
+  "description": "Custom Celo Composer project.",
+  "homepage": "https://github.com/celo-org/celo-composer/blob/main/README.md",
+  "keywords": [
+    "celo-composer",
+    "celo"
+  ],
+  "license": "MIT",
+  "name": "proposal",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celo-org/celo-composer.git"
+  },
+  "scripts": {
+    "react-app:dev": "yarn workspace @proposal/react-app dev",
+    "react-app:build": "yarn workspace @proposal/react-app build",
+    "react-app:start": "yarn workspace @proposal/react-app start",
+    "react-app:lint": "yarn workspace @proposal/react-app lint",
+    "hardhat:compile": "yarn workspace @proposal/hardhat compile",
+    "hardhat:tsc": "yarn workspace @proposal/hardhat tsc",
+    "hardhat:build": "yarn workspace @proposal/hardhat build",
+    "hardhat:clean": "yarn workspace @proposal/hardhat clean",
+    "hardhat:run:node": "yarn workspace @proposal/hardhat run:node",
+    "hardhat:test": "yarn workspace @proposal/hardhat test",
+    "hardhat:prettier": "yarn workspace @proposal/hardhat prettier"
+  },
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ]
+}
