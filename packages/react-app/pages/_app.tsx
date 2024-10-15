@@ -11,6 +11,7 @@ import Layout from '../components/Layout';
 import '../styles/globals.css';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ProposalsContextProvider } from '@/context/proposalsContext';
 
 const connectors = connectorsForWallets(
   [
@@ -41,9 +42,11 @@ function App({ Component, pageProps }: AppProps) {
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <ProposalsContextProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ProposalsContextProvider>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

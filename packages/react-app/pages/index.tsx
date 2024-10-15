@@ -1,10 +1,15 @@
+import { Box } from '@radix-ui/themes';
 import { useEffect, useState } from 'react';
 import { useAccount } from 'wagmi';
+import CreateProposalModal from "../components/CreateProposalModal"
+import Proposals from "../components/Proposals"
+import { useProposals } from "../context/proposalsContext";
 
 export default function Home() {
   const [userAddress, setUserAddress] = useState('');
   const [isMounted, setIsMounted] = useState(false);
   const { address, isConnected } = useAccount();
+  const { proposals } = useProposals();
 
   useEffect(() => {
     setIsMounted(true);
@@ -22,9 +27,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="h1">
-        There you go... a canvas for your next Celo project!
-      </div>
+         <Box className="flex justify-end p-4">
+        <CreateProposalModal />
+      </Box>
+
+      <Proposals proposals={proposals} />
       {isConnected ? (
         <div className="h2 text-center">Your address: {userAddress}</div>
       ) : (
