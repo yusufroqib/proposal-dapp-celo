@@ -7,6 +7,7 @@ import { useConnect } from 'wagmi';
 import { injected } from 'wagmi/connectors';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Box } from '@radix-ui/themes';
 
 export default function Header() {
   const [hideConnectBtn, setHideConnectBtn] = useState(false);
@@ -40,13 +41,9 @@ export default function Header() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Image
-                    className="block h-8 w-auto sm:block lg:block"
-                    src="/logo.svg"
-                    width="24"
-                    height="24"
-                    alt="Celo Logo"
-                  />
+                <Box className="text-2xl font-bold text-blue-600">
+                    Proposal Dapp
+                </Box>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <a

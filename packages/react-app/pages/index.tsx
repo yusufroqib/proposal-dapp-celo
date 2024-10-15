@@ -32,11 +32,7 @@ export default function Home() {
       </Box>
 
       <Proposals proposals={proposals} />
-      {isConnected ? (
-        <div className="h2 text-center">Your address: {userAddress}</div>
-      ) : (
-        <div>No Wallet Connected</div>
-      )}
+   
     </div>
   );
 }
