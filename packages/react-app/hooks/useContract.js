@@ -9,8 +9,6 @@ import { jsonRpcProvider as readOnlyProvider } from "../constants/provider";
 const useContract = (withSigner = false) => {
   const signer = useEthersSigner();
 
-//   const { readOnlyProvider } = useRunners();
-
   return useMemo(() => {
     if (withSigner) {
       console.log('Returning...');
